@@ -155,7 +155,7 @@ development:
 test:
   clients:
     default:
-      database: shuffle_lunch_test
+      database: team_lunch_test
       hosts:
         - localhost:27017
       options:
