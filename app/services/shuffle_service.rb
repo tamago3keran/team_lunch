@@ -12,7 +12,7 @@ class ShuffleService < BaseService
       devide_user_into_groups(shuffled_users)
       set_best_matching(groups)
     end
-    GroupSet.new(groups: best_groups)
+    Lunch.new(groups: best_groups)
   end
 
   private
@@ -54,7 +54,7 @@ class ShuffleService < BaseService
     end
 
     def total_matching_score(groups)
-      GroupSet.new(groups: groups).total_matching_score
+      Lunch.new(groups: groups).total_matching_score
     end
 
     def set_best_matching(groups)

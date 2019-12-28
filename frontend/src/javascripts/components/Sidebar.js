@@ -26,7 +26,7 @@ class Sidebar extends React.Component {
           </ListItem>
           <ListItem
             tag="a"
-            href="/group_sets"
+            href="/lunches"
             activated={this.props.activeList == 'groups'}>
             <ListItemGraphic graphic={<MaterialIcon icon="group" />} />
             <ListItemText primaryText="Groups" />

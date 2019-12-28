@@ -1,0 +1,16 @@
+#js-lunch_show
+.main
+  %h1 チーム分け
+  - @groups.each_with_index do |group, i|
+    %h2 Group#{i+1}
+    = link_to "編集する", edit_lunch_group_path(@lunch, group)
+    = link_to "削除する", lunch_group_path(@lunch, group), method: :delete
+    %br
+    - group.members.each do |member|
+      = "#{member.full_name}"
+      %br
+  %br
+  = link_to "チームを追加する", new_lunch_group_path(@lunch)
+  %br
+  = link_to "一覧に戻る", lunches_path
+  = javascript_include_tag 'packs/lunch_show.bundle'

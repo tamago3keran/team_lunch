@@ -4,5 +4,5 @@ import Sidebar from '../../components/Sidebar';
 
 ReactDOM.render(
   <Sidebar activeList="groups" />,
-  document.getElementById('js-group_set_new'),
+  document.getElementById('js-lunch_show'),
 );

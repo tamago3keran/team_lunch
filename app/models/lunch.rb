@@ -1,4 +1,4 @@
-class GroupSet
+class Lunch
   include Mongoid::Document
   include Mongoid::Timestamps
 

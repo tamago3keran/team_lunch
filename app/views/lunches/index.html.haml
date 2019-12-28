@@ -1,0 +1,19 @@
+#js-lunch_index
+.main
+  %h1 チーム分け一覧
+  - if @lunches.present?
+    = paginate(@lunches)
+    %br
+    - @lunches.each do |lunch|
+      = link_to lunch.created_at, lunch_path(lunch)
+      - if lunch.applied?
+        適用済み
+        = link_to("適用を取り消す", lunch_applied_status_path(lunch, params: { cancel_update: true }), method: :patch)
+      - else
+        未適用
+        = link_to("適用する", lunch_applied_status_path(lunch), method: :patch)
+        = link_to("削除する", lunch_path(lunch), method: :delete)
+      %br
+  %br
+  = link_to "チームを作成する", new_lunch_path
+  = javascript_include_tag 'packs/lunch_index.bundle'

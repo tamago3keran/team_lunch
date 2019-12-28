@@ -4,9 +4,9 @@ module.exports = {
   entry: {
     group_new: './src/javascripts/pages/groups/group_new.js',
     group_edit: './src/javascripts/pages/groups/group_edit.js',
-    group_set_index: './src/javascripts/pages/group_sets/group_set_index.js',
-    group_set_show: './src/javascripts/pages/group_sets/group_set_show.js',
-    group_set_new: './src/javascripts/pages/group_sets/group_set_new.js',
+    lunch_index: './src/javascripts/pages/lunches/lunch_index.js',
+    lunch_show: './src/javascripts/pages/lunches/lunch_show.js',
+    lunch_new: './src/javascripts/pages/lunches/lunch_new.js',
     user_index: './src/javascripts/pages/users/user_index.js',
     user_new: './src/javascripts/pages/users/user_new.js',
   },
