@@ -9,6 +9,9 @@ module.exports = {
     lunch_new: './src/javascripts/pages/lunches/lunch_new.js',
     user_index: './src/javascripts/pages/users/user_index.js',
     user_new: './src/javascripts/pages/users/user_new.js',
+    office_show: './src/javascripts/pages/office/office_show.js',
+    office_new: './src/javascripts/pages/office/office_new.js',
+    office_edit: './src/javascripts/pages/office/office_edit.js',
   },
 
   output: {
