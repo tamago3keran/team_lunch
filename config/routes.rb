@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       resource :activation, only: [:update, :destroy]
     end
   end
-  resource :office, only: [:show, :new, :create]
+  resource :office, only: [:show, :new, :create, :edit, :update]
   resources :lunches, only: [:index, :show, :new, :create, :destroy] do
     scope module: :lunches do
       resources :groups, only: [:new, :create, :edit, :update, :destroy]

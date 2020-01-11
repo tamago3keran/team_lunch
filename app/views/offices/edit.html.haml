@@ -1,8 +1,9 @@
 #js-user_new
 .main
-  %h1 Register Office
+  %h1 Change Office
   = form_for @office, url: office_path do |f|
-    = f.text_field :address, placeholder: 'address', value: nil, required: true
+    = f.text_field :address, placeholder: 'address', required: true
     = submit_tag "Submit"
   %br
+  = link_to "Back", office_path
   = javascript_include_tag 'packs/user_new.bundle'
