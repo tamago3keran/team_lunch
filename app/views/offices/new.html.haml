@@ -1,0 +1,8 @@
+#js-office_new
+.main
+  %h1 Register Office
+  = form_for @office, url: office_path do |f|
+    = f.text_field :address, placeholder: 'address', value: nil, required: true
+    = submit_tag "Submit"
+  %br
+  = javascript_include_tag 'packs/office_new.bundle'

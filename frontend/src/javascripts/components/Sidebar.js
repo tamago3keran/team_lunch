@@ -19,6 +19,13 @@ class Sidebar extends React.Component {
         <List>
           <ListItem
             tag="a"
+            href="/office"
+            activated={this.props.activeList == 'office'}>
+            <ListItemGraphic graphic={<MaterialIcon icon="apartment" />} />
+            <ListItemText primaryText="Office" />
+          </ListItem>
+          <ListItem
+            tag="a"
             href="/users"
             activated={this.props.activeList == 'users'}>
             <ListItemGraphic graphic={<MaterialIcon icon="account_box" />} />
