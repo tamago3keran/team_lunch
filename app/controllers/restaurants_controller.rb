@@ -1,13 +1,9 @@
 class RestaurantsController < ApplicationController
-  before_action :load_resource, only: [:index]
-
-  def index; end
-
-  private
-    def load_resource
-      case params[:action].to_sym
-      when :index
-        @restaurants = Restaurant.all
-      end
+  def index
+    if params[:search_word]
+      @restaurants = Restaurant.where(name: /#{Regexp.escape(params[:search_word])}/i).asc(:distance)
+    else
+      @restaurants = Restaurant.all.asc(:distance)
     end
+  end
 end

@@ -5,7 +5,7 @@ class Restaurant
   CATEGORIES = %w(chinese korean french italian asian curry japanese)
 
   field :address, type: String
-  field :category, type: String, default: "others"
+  field :category, type: String
   field :distance, type: Integer
   field :google_maps_url, type: String
   field :google_place_id, type: String
@@ -16,7 +16,7 @@ class Restaurant
   field :website_url, type: String
 
   validates :address, presence: true
-  validates :category, presence: true
+  validates :category, presence: true, inclusion: { in: CATEGORIES }
   validates :distance, presence: true
   validates :google_maps_url, presence: true
   validates :google_place_id, presence: true, uniqueness: true
