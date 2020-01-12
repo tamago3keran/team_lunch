@@ -12,6 +12,9 @@ module.exports = {
     office_show: './src/javascripts/pages/office/office_show.js',
     office_new: './src/javascripts/pages/office/office_new.js',
     office_edit: './src/javascripts/pages/office/office_edit.js',
+    restaurant_show: './src/javascripts/pages/restaurants/restaurant_show.js',
+    restaurant_index: './src/javascripts/pages/restaurants/restaurant_index.js',
+    restaurant_edit: './src/javascripts/pages/restaurants/restaurant_edit.js',
   },
 
   output: {

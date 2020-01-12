@@ -1,4 +1,4 @@
-#js-lunch_show
+#js-restaurant_index
 .main
   %h1 Restaurants
   = button_to "Registration Restaurants", restaurants_bulk_create_path, method: :post
@@ -8,7 +8,7 @@
     = submit_tag 'Search'
 
   - @restaurants.each do |restaurant|
-    %h2= link_to restaurant.name, restaurant_path(restaurant), target: "_blank"
+    %h2= link_to restaurant.name, restaurant_path(restaurant)
     = "category: #{restaurant.category}"
     %br
     = "address: #{restaurant.address}"
@@ -24,4 +24,4 @@
     %br
     %br
   %br
-  = javascript_include_tag 'packs/lunch_show.bundle'
+  = javascript_include_tag 'packs/restaurant_index.bundle'

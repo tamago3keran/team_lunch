@@ -1,4 +1,4 @@
-#js-office_edit
+#js-restaurant_edit
 .main
   %h1 Edit Restaurant
   = form_for @restaurant, url: restaurant_path, method: :patch do |f|
@@ -9,4 +9,4 @@
     = f.submit "Update"
   %br
   = link_to "Back", restaurant_path(@restaurant)
-  = javascript_include_tag 'packs/office_edit.bundle'
+  = javascript_include_tag 'packs/restaurant_edit.bundle'
