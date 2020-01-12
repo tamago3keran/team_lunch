@@ -1,0 +1,27 @@
+#js-restaurant_index
+.main
+  %h1 Restaurants
+  = button_to "Registration Restaurants", restaurants_bulk_create_path, method: :post
+  %br
+  = form_tag restaurants_path, method: :get do
+    = text_field_tag :search_word, params[:search_word], placeholder: 'Please input restaurant name'
+    = submit_tag 'Search'
+
+  - @restaurants.each do |restaurant|
+    %h2= link_to restaurant.name, restaurant_path(restaurant)
+    = "category: #{restaurant.category}"
+    %br
+    = "address: #{restaurant.address}"
+    %br
+    = "distance: #{restaurant.distance}m"
+    %br
+    = "rating: #{restaurant.google_rating}"
+    %br
+    = link_to "Open Google Maps", restaurant.google_maps_url, target: "_blank"
+    %br
+    - if restaurant.website_url.present?
+      = link_to "Open Web Site", restaurant.website_url, target: "_blank"
+    %br
+    %br
+  %br
+  = javascript_include_tag 'packs/restaurant_index.bundle'
