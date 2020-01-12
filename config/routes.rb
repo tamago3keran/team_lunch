@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     end
   end
   resource :office, only: [:show, :new, :create, :edit, :update]
-  resources :restaurants, only: [] do
+  resources :restaurants, only: [:index]
+  namespace :restaurants do
     resource :bulk_create, only: [:create]
   end
   resources :users, only: [:index, :new, :create] do

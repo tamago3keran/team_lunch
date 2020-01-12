@@ -3,7 +3,6 @@ class BulkCreateRestaurantsService < BaseService
 
   def call
     return false unless office = Office.first.presence
-    Restaurant.destroy_all
     Restaurant::CATEGORIES.each do |category|
       Google::PlaceSearcher.near_by_search(office.latitude, office.longitude, category).each do |result|
         next if Restaurant.where(google_place_id: result["place_id"]).exists?

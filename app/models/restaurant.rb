@@ -2,7 +2,7 @@ class Restaurant
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  CATEGORIES = %w(japanese chinese korean french italian others)
+  CATEGORIES = %w(chinese korean french italian asian curry japanese)
 
   field :address, type: String
   field :category, type: String, default: "others"
@@ -16,7 +16,7 @@ class Restaurant
   field :website_url, type: String
 
   validates :address, presence: true
-  validates :category, inclusion: { in: CATEGORIES }, presence: true
+  validates :category, presence: true
   validates :distance, presence: true
   validates :google_maps_url, presence: true
   validates :google_place_id, presence: true, uniqueness: true

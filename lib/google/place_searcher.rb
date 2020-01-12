@@ -33,7 +33,7 @@ module Google
 
     private
       def self.build_near_by_search_params(lat, lng, category)
-        { location: "#{lat},#{lng}", type: "restaurant", radius: 1500, keyword: category, language: Settings.google.language, key: Settings.google.api_key }
+        { location: "#{lat},#{lng}", type: "restaurant", radius: 800, keyword: category, language: Settings.google.language, key: Settings.google.api_key }
       end
 
       def self.build_near_by_search_next_page_params(page_token)
