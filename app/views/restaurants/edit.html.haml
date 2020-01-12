@@ -1,0 +1,12 @@
+#js-office_edit
+.main
+  %h1 Edit Restaurant
+  = form_for @restaurant, url: restaurant_path, method: :patch do |f|
+    = f.text_field :name, placeholder: 'name', required: true
+    %br
+    = f.select :category, Restaurant::CATEGORIES.map{ |category| [ category.capitalize, category ] }, { selected: @restaurant.category }
+    %br
+    = f.submit "Update"
+  %br
+  = link_to "Back", restaurant_path(@restaurant)
+  = javascript_include_tag 'packs/office_edit.bundle'

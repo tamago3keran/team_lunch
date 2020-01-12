@@ -8,7 +8,7 @@
     = submit_tag 'Search'
 
   - @restaurants.each do |restaurant|
-    %h2= restaurant.name
+    %h2= link_to restaurant.name, restaurant_path(restaurant), target: "_blank"
     = "category: #{restaurant.category}"
     %br
     = "address: #{restaurant.address}"

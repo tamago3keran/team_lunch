@@ -1,0 +1,22 @@
+#js-lunch_show
+.main
+  %h1 About Restaurant
+  %h2= @restaurant.name
+  = "category: #{@restaurant.category}"
+  %br
+  = "address: #{@restaurant.address}"
+  %br
+  = "distance: #{@restaurant.distance}m"
+  %br
+  = "rating: #{@restaurant.google_rating}"
+  %br
+  = "google_maps_url: #{@restaurant.google_maps_url}"
+  %br
+  - if @restaurant.website_url.present?
+    = "website_url: #{@restaurant.website_url}"
+  %br
+  %br
+  = link_to "Edit", edit_restaurant_path(@restaurant)
+  %br
+  = link_to "Back", restaurants_path
+  = javascript_include_tag 'packs/lunch_show.bundle'
